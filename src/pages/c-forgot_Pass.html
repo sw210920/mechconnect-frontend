@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forgot Password | MechConnect</title>
+
+    <!-- PAGE CSS -->
+    <link rel="stylesheet" href="./css/c-forgot_Pass.css">
+
+    <!-- HEADER / FOOTER CSS -->
+    <link rel="stylesheet" href="./header-footer/header.css">
+    <link rel="stylesheet" href="./footer/footer.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+
+    <div class="forgot-container">
+
+        <h2>Forgot Password  (Customer)</h2>
+
+        <!-- STEP 1 : MOBILE -->
+        <section id="step-mobile" class="step active">
+            <input
+                type="text"
+                id="email"
+                placeholder="Enter registered Email Id"
+            >
+            <button type="button" onclick="sendOtp()">
+                Send OTP
+            </button>
+        </section>
+
+        <!-- STEP 2 : OTP (HIDDEN BY DEFAULT) -->
+        <section id="step-otp" class="step hidden">
+            <input
+                type="text"
+                id="otp"
+                placeholder="Enter OTP"
+            >
+            <button type="button" onclick="verifyOtp()">
+                Verify OTP
+            </button>
+        </section>
+
+        <!-- STEP 3 : RESET PASSWORD (HIDDEN BY DEFAULT) -->
+        <section id="step-reset" class="step hidden">
+            <input
+                type="password"
+                id="newPassword"
+                placeholder="New Password"
+            >
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+            >
+            <button type="button" onclick="resetPassword()">
+                Reset Password
+            </button>
+        </section>
+
+        <!-- MESSAGE -->
+        <p id="message"></p>
+
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<!-- PAGE JS -->
+<script src="./script/c-forgot_Pass.js"></script>
+
+<!-- HEADER / FOOTER LOADERS -->
+<script src="./header-footer/h-loader.js" defer></script>
+<script src="./footer/f-loader.js" defer></script>
+
+<!-- FOOTER SCROLL HANDLER -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#goFooter")) {
+      e.preventDefault();
+
+      function scrollNow() {
+        const footer = document.querySelector("#site-footer");
+        if (footer) {
+          footer.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      if (document.querySelector("#site-footer")) {
+        scrollNow();
+      } else {
+        window.addEventListener("footer-loaded", scrollNow, { once: true });
+      }
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

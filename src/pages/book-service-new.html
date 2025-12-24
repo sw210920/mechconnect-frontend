@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MechConnect | Find & Book Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- COMMON CSS -->
+  <link rel="stylesheet" href="./header-footer/header.css">
+  <link rel="stylesheet" href="./footer/footer.css">
+
+  <!-- PAGE CSS -->
+ 
+  <link rel="stylesheet" href="./css/book-service-new.css" />
+</head>
+
+<body data-hide-links=",services,mechanics,how-it-works,">
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <!-- ================= FIND MECHANIC SECTION ================= -->
+  <main class="page-content" id="findMechanicSection">
+
+    <header class="page-header">
+      <h1>Find a Mechanic Near You</h1>
+      <p>Select your location and service type</p>
+    </header>
+
+    <section class="filters">
+      <input type="text" id="location" placeholder="Enter your location" />
+
+      <select id="service">
+        <option value="">Select Service</option>
+        <option value="cars">Car Maintenance</option>
+        <option value="bikes">Bike Maintenance</option>
+        <option value="both">Both Cars & Bikes</option>
+        <option value="EMERGENCY">Emergency Repair</option>
+        <option value="DOORSTEP">Doorstep Service</option>
+      </select>
+
+      <button id="searchBtn">Search Mechanics</button>
+    </section>
+
+    <section id="mechanicList" class="mechanic-list"></section>
+
+  </main>
+
+  <!-- ================= BOOK SERVICE SECTION ================= -->
+  <main class="booking-container" id="bookServiceSection" style="display:none;">
+
+    <h1>Book Your Vehicle Service</h1>
+    <p class="subtitle">Follow the steps below to schedule your appointment</p>
+
+    <div class="steps-wrapper">
+
+      <!-- STEP 1 -->
+      <section id="step1" class="booking-step active">
+        <h2>Select Your Service Package</h2>
+
+        <div class="package-grid">
+          <div class="package-card" data-package="basic">
+            <h3>Basic Service</h3>
+            <p>Oil Change, Safety Check</p>
+            <strong>₹799</strong>
+          </div>
+
+          <div class="package-card" data-package="standard">
+            <h3>Standard Service</h3>
+            <p>Brake, Air Filter, Scan</p>
+            <strong>₹1499</strong>
+          </div>
+
+          <div class="package-card" data-package="premium">
+            <h3>Premium Service</h3>
+            <p>Engine, AC, Alignment</p>
+            <strong>₹2499</strong>
+          </div>
+        </div>
+
+        <button id="step1Next" class="btn-primary next-btn">Continue</button>
+      </section>
+
+      <!-- STEP 2 -->
+      <section id="step2" class="booking-step">
+        <h2>Select Date & Time</h2>
+
+        <input type="date" id="serviceDate" />
+
+        <div class="time-slots">
+          <button class="time-slot" data-time="9–11 AM">9–11 AM</button>
+          <button class="time-slot" data-time="11–1 PM">11–1 PM</button>
+          <button class="time-slot" data-time="1–3 PM">1–3 PM</button>
+          <button class="time-slot" data-time="3–5 PM">3–5 PM</button>
+        </div>
+
+        <button id="step2Back" class="btn-outline">Back</button>
+        <button id="step2Next" class="btn-primary">Continue</button>
+      </section>
+
+      <!-- STEP 3 -->
+      <section id="step3" class="booking-step">
+        <h2>Vehicle Details</h2>
+
+        <div class="input-grid">
+          <input id="vehicleMake" placeholder="Vehicle Make">
+          <input id="vehicleModel" placeholder="Vehicle Model">
+          <input id="vehicleYear" type="number" placeholder="Year">
+          <input id="vehicleReg" placeholder="Registration Number">
+        </div>
+
+        <button id="step3Back" class="btn-outline">Back</button>
+        <button id="step3Next" class="btn-primary">Continue</button>
+      </section>
+
+      <!-- STEP 4 -->
+      <section id="step4" class="booking-step">
+        <h2>Review & Confirm</h2>
+        <div id="summaryBox" class="summary-box"></div>
+
+        <button id="step4Back" class="btn-outline">Back</button>
+        <button id="confirmBooking" class="btn-primary">Confirm Booking</button>
+      </section>
+
+      <!-- SUCCESS -->
+      <section id="step5" class="booking-step">
+        <h2>🎉 Booking Successful!</h2>
+        <p>Your service has been scheduled.</p>
+        <button class="btn-primary" onclick="location.reload()">Back to Home</button>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- SCRIPTS -->
+
+  <script src="./script/book-service-new.js"></script>
+  <script src="./header-footer/h-loader.js"></script>
+  <script src="./footer/f-loader.js"></script>
+
+  <!-- COMMON FOOTER SCROLL -->
+  <script>
+    document.addEventListener("click", e => {
+      if (e.target.matches("#goFooter")) {
+        e.preventDefault();
+        const footer = document.querySelector("#site-footer");
+        footer && footer.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  </script>
+
+</body>
+</html>

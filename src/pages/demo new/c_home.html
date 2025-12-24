@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MechConnect — Dashboard</title>
+
+  <link rel="stylesheet" href="./">
+  <link rel="stylesheet" href="././c_home.css">
+  <link rel="stylesheet" href="../header-footer/header.css">
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <main class="dashboard">
+
+    <!-- Greeting -->
+    <section class="welcome-card">
+      <h2 id="greetText">Welcome!</h2>
+      <p id="userName"></p>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+      <h3>Quick Actions</h3>
+      <div class="actions-grid">
+        <a href="./booking.html" class="action-card">
+          <i>🛠️</i>
+          <span>Book Service</span>
+        </a>
+
+        <a href="./mechanics.html" class="action-card">
+          <i>👨‍🔧</i>
+          <span>Find Mechanics</span>
+        </a>
+
+        <a href="./myBookings.html" class="action-card">
+          <i>📑</i>
+          <span>My Bookings</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Recent Bookings -->
+    <section class="recent-box">
+      <h3>Recent Bookings</h3>
+      <div id="recentBookings" class="recent-items">
+        <p>No bookings yet.</p>
+      </div>
+    </section>
+
+    <!-- Recommended Mechanics -->
+    <section class="recommended">
+      <h3>Recommended Mechanics</h3>
+
+      <div class="mech-grid" id="mechGrid"></div>
+    </section>
+
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="../header-footer/h-loader.js"></script>
+  <script src="../footer/f-loader.js"></script>
+  <script src="./js/home.js"></script>
+  <script src="./c_home.js"></script>
+
+</body>
+</html>

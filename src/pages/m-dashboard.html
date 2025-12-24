@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MechConnect — Mechanic Dashboard</title>
+
+  <link rel="stylesheet" href="./css/m-dashboard.css">
+  <link rel="stylesheet" href="./header-footer/header.css">
+  <link rel="stylesheet" href="./footer/footer.css">
+</head>
+
+<body class="inner-page" data-hide-links=",services,mechanics,how-it-works,home">
+
+  <!-- Dynamic Header -->
+  <div id="header"></div>
+
+  <main class="dashboard">
+
+    <!-- Greeting -->
+    <section class="welcome-card">
+      <h2 id="greetingText">Welcome Mechanic</h2>
+      <p class="username">Hello, <span id="mechanicName"></span> 👨‍🔧</p>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+      <h3>Quick Actions</h3>
+      <div class="actions-grid">
+
+        <a class="action-card" href="./m-request.html">
+          <div class="icon">📩</div>
+          <span>Job Requests</span>
+        </a>
+
+        <a class="action-card" href="./availability.html">
+          <div class="icon">🗓️</div>
+          <span>Set Availability</span>
+        </a>
+
+        <a class="action-card" href="./m-profile.html">
+          <div class="icon">⚙️</div>
+          <span>Profile Settings</span>
+        </a>
+
+        <a class="action-card" href="./earnings.html">
+          <div class="icon">💰</div>
+          <span>Earnings</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Booking Requests -->
+    <section class="requests-section">
+      <h3>New Service Requests</h3>
+      <div id="requestList" class="request-list">
+        <p class="empty">No new requests.</p>
+      </div>
+    </section>
+
+    <!-- Upcoming Jobs -->
+    <section class="upcoming-section">
+      <h3>Upcoming Jobs</h3>
+      <div id="upcomingJobs" class="job-list">
+        <p class="empty">No upcoming jobs.</p>
+      </div>
+    </section>
+
+    <!-- Earnings -->
+    <section class="earnings-section">
+      <h3>Earnings Summary</h3>
+      <div class="earnings-card">
+        <h2>₹ <span id="earningsAmount">0</span></h2>
+        <p>This Month Earnings</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Dynamic Footer -->
+  <div id="footer"></div>
+
+  <script src="./header-footer/h-loader.js"></script>
+  <script src="./footer/f-loader.js"></script>
+  <script src="./script/m-dashboard.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // handle click on header link BEFORE footer exists
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#goFooter")) {
+      e.preventDefault();
+
+      function scrollNow() {
+        const footer = document.querySelector("#site-footer");
+        if (footer) {
+          footer.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // If footer already loaded → scroll immediately
+      if (document.querySelector("#site-footer")) {
+        scrollNow();
+      } 
+      else {
+        // Wait until footer is loaded → scroll
+        window.addEventListener("footer-loaded", scrollNow, { once: true });
+      }
+    }
+  });
+
+});
+</script> 
+</body>
+</html>

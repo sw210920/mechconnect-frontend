@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="./css/singnIn.css">
+  <link rel="stylesheet" href="./header-footer/header.css">
+  <link rel="stylesheet" href="./footer/footer.css">
+  
+</head>
+<body data-hide-links=",services,mechanics,how-it-works,">
+
+
+<div id="header" ></div>
+  <div class="auth-container">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Welcome Back</h2>
+        <p class="card-desc">Sign in to your account</p>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-button active" data-tab="customer">👤 Customer</button>
+        <button class="tab-button" data-tab="mechanic">🔧 Mechanic</button>
+      </div>
+
+      <div class="tab-content active" id="customer">
+        <form id="customerForm">
+          <label>Email</label>
+          <div class="input-group">
+            <input type="email" id="customerEmail" name="email" placeholder="Enter your email" required>
+          </div>
+
+          <label>Password</label>
+          <div class="input-group">
+            <input type="password" id="customerPassword" name="password" placeholder="Enter your password" required>
+            <button type="button" class="toggle-password" data-target="customerPassword">👁️</button>
+          </div>
+
+          <div class="forgot">
+            <a href="./c-forgot_Pass.html">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn blue">Sign In as Customer</button>
+        </form>
+      </div>
+
+      <div class="tab-content" id="mechanic">
+        <form id="mechanicForm">
+          <label>Email</label>
+          <div class="input-group">
+            <input type="email" id="mechanicEmail" name="email" placeholder="Enter your email" required>
+          </div>
+
+          <label>Password</label>
+          <div class="input-group">
+            <input type="password" id="mechanicPassword" name="password" placeholder="Enter your password" required>
+            <button type="button" class="toggle-password" data-target="mechanicPassword">👁️</button>
+          </div>
+
+          <div class="forgot">
+            <a href="./m-forgot_Pass.html">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn pink">Sign In as Mechanic</button>
+        </form>
+      </div>
+
+      <div class="footer">
+        <p>Don't have an account?
+          <a href="./signUp.html">Sign up here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+    <div id="footer" ></div>
+
+
+  <script src="./script/signIn.js" defer></script>
+ <script src="./header-footer/h-loader.js" defer></script>
+<script src="./footer/f-loader.js" defer></script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // handle click on header link BEFORE footer exists
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#goFooter")) {
+      e.preventDefault();
+
+      function scrollNow() {
+        const footer = document.querySelector("#site-footer");
+        if (footer) {
+          footer.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // If footer already loaded → scroll immediately
+      if (document.querySelector("#site-footer")) {
+        scrollNow();
+      } 
+      else {
+        // Wait until footer is loaded → scroll
+        window.addEventListener("footer-loaded", scrollNow, { once: true });
+      }
+    }
+  });
+
+});
+</script>
+
+
+</body>
+</html>

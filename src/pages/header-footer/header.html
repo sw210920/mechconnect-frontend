@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MechConnect - Expert Vehicle Maintenance</title>
+    <link rel="stylesheet" href="./header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+
+<body>
+    
+ 
+<!-- Header -->
+    <header class="header">
+    <div class="container">
+        <div class="nav-wrapper">
+
+            <!-- LOGO -->
+            <a href="../../index.html" class="logo">
+                <div class="logo-icon">
+                    <span>MC</span>
+                </div>
+                <div class="logo-text-wrapper">
+                    <span class="logo-text">MechConnect</span>
+                    <span class="logo-tagline">Revive & Drive</span>
+                </div>
+            </a>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="nav-desktop">
+                <a href="#" data-id="home" class="nav-link">Home</a>
+                <a href="#services" data-id="services" class="nav-link">Services</a>
+                <a href="#mechanics" data-id="mechanics" class="nav-link">Mechanics</a>
+                <a href="#how-it-works" data-id="how-it-works" class="nav-link">How It Works</a>
+                <a href="#contact" id="goFooter" data-id="about" class="nav-link">About</a>
+
+                <!-- AUTH BUTTONS -->
+                <div class="nav-buttons">
+                    <a href="./signIn.html" class="btn btn-secondary auth-login" data-auth="login">Sign In</a>
+                    <a href="./signUp.html" class="btn btn-primary auth-signup" data-auth="signup">Sign Up</a>
+
+                    <!-- Shown only AFTER login -->
+                    <button class="btn btn-outline auth-logout" data-auth="logout" style="display:none;">
+                        Sign Out
+                    </button>
+                </div>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+
+        <!-- MOBILE NAVIGATION -->
+        <nav class="nav-mobile" id="mobileNav">
+            <a href="../../index.html" class="nav-link">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#mechanics" class="nav-link">Mechanics</a>
+            <a href="#how-it-works" class="nav-link">How It Works</a>
+            <a href="#contact" class="nav-link">About</a>
+
+            <div class="nav-buttons-mobile">
+                <a href="../signIn.html" class="btn btn-outline auth-login" data-auth="login">Sign In</a>
+                <a href="../signUp.html" class="btn btn-primary auth-signup" data-auth="signup">Sign Up</a>
+
+                <!-- Mobile logout button (only visible after login) -->
+                <button class="btn btn-secondary auth-logout" data-auth="logout" style="display:none;">
+                    Sign Out
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+    <script src="./h-loader.js" defer>
+   
+  </script>
+    </body>
+</html>
