@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const booking = {
     customerId: user.customerId || user.id,
     mechanicId: null,
-    customerName: user.firstName || "Customer",
+    customerName: `${user.firstName} ${user.lastName}`.trim(),
+
 
     serviceType: "",
     location: "",
@@ -24,6 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     packageName: "",
     date: "",
     time: "",
+
+    serviceMode: "DOORSTEP",    
+    serviceAddress: "",     
+
 
     make: "",
     model: "",
@@ -39,6 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const findSection = document.getElementById("findMechanicSection");
   const bookSection = document.getElementById("bookServiceSection");
+
+  const addressBox = document.getElementById("addressBox");
+  const serviceAddressInput = document.getElementById("serviceAddress");
+
 
   /* =====================================================
      FIND MECHANICS
@@ -101,28 +110,69 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+/* =====================================================
+   TOGGLE PACKAGES BASED ON SERVICE TYPE
+===================================================== */
+function togglePackagesByService(serviceType) {
+  const packages = document.querySelectorAll(".package-card");
+
+  packages.forEach(card => {
+    card.style.display = "block"; // default show
+  });
+
+  // Normalize
+  serviceType = serviceType.toLowerCase();
+
+  // Bike-only packages
+  if (serviceType === "bike") {
+    packages.forEach(card => {
+      if (card.dataset.package === "car") {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  // Car-only packages
+  if (serviceType === "car") {
+    packages.forEach(card => {
+      if (card.dataset.package === "bike") {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  // Both → show all
+}
+
+
+
   /* =====================================================
      MECHANIC SELECTION (MANDATORY)
   ===================================================== */
-  function selectMechanic(mechanic) {
-    if (!mechanic || !mechanic.mechanicId
-) {
-      alert("Invalid mechanic selected");
-      return;
-    }
-
-    booking.mechanicId = mechanic.mechanicId;
-    booking.mechanicName = `${mechanic.firstName} ${mechanic.lastName || ""}`;
-    booking.serviceType = mechanic.specialization;
-    booking.location = mechanic.serviceLocation;
-
-    console.log("Selected mechanic ID:", booking.mechanicId);
-
-    findSection.style.display = "none";
-    bookSection.style.display = "block";
-
-    showStep(1);
+ function selectMechanic(mechanic) {
+  if (!mechanic || !mechanic.mechanicId) {
+    alert("Invalid mechanic selected");
+    return;
   }
+
+  booking.mechanicId = mechanic.mechanicId;
+  booking.mechanicName =
+    `${mechanic.firstName} ${mechanic.lastName || ""}`.trim();
+
+  booking.serviceType = mechanic.specialization; // bike / cars / both
+  booking.location = mechanic.serviceLocation;
+
+  console.log("Selected mechanic ID:", booking.mechanicId);
+  console.log("Selected service type:", booking.serviceType);
+
+  togglePackagesByService(booking.serviceType);
+
+  findSection.style.display = "none";
+  bookSection.style.display = "block";
+  showStep(1);
+}
+
 
   /* =====================================================
      STEP HANDLER
@@ -143,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach(c => c.classList.remove("selected"));
 
       card.classList.add("selected");
-      booking.packageName = card.dataset.package;
+      booking.packageName = card.querySelector("h3").innerText.trim();
     });
   });
 
@@ -177,11 +227,56 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    if (booking.serviceMode === "DOORSTEP") {
+    booking.serviceAddress = serviceAddressInput.value.trim();
+
+    if (!booking.serviceAddress) {
+      alert("Please enter service address for doorstep service");
+      return;
+    }
+  }
+
     booking.date = dateInput.value;
     showStep(3);
   };
 
   document.getElementById("step2Back").onclick = () => showStep(1);
+
+
+
+ 
+
+function hideAddressBox() {
+  addressBox.classList.add("hidden");
+  serviceAddressInput.value = "";
+}
+
+function showAddressBox() {
+  addressBox.classList.remove("hidden");
+}
+
+document.querySelectorAll('input[name="serviceMode"]').forEach(radio => {
+  radio.addEventListener("change", () => {
+    booking.serviceMode = radio.value;
+
+    if (radio.value === "GARAGE") {
+      hideAddressBox();
+      booking.serviceAddress = "";
+    } else {
+      showAddressBox();
+    }
+  });
+});
+
+
+
+if (booking.serviceMode === "GARAGE") {
+  hideAddressBox();
+} else {
+  showAddressBox();
+}
+
+
 
   /* =====================================================
      STEP 3 — VEHICLE
@@ -212,6 +307,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <p><strong>Mechanic:</strong> ${booking.mechanicName}</p>
     <p><strong>Service:</strong> ${booking.serviceType}</p>
+    <p><strong>Service Mode:</strong> ${booking.serviceMode}</p>
+
+    ${
+        booking.serviceMode === "DOORSTEP"
+          ? `<p><strong>Service Address:</strong> ${booking.serviceAddress}</p>`
+          : `<p><strong>Garage Address:</strong> Will be shared after acceptance</p>`
+      }
+    
     <p><strong>Location:</strong> ${booking.location}</p>
 
     <p><strong>Package:</strong> ${booking.packageName}</p>
@@ -243,15 +346,18 @@ document.addEventListener("DOMContentLoaded", () => {
   customerName: booking.customerName,
 
   serviceType: booking.serviceType,
-  serviceLocation: booking.location,   // ✅ FIXED
+  serviceLocation: booking.location, 
+
+   serviceMode: booking.serviceMode,        
+    serviceAddress: booking.serviceAddress, 
 
   packageName: booking.packageName,
-  date: booking.date,
+  serviceDate: booking.date,
   time: booking.time,
 
   make: booking.make,
   model: booking.model,
-  vehicleYear: booking.year,            // ✅ FIXED
+  vehicleYear: booking.year,            
   registrationNumber: booking.registrationNumber
 };
     console.log("FINAL PAYLOAD:", payload);

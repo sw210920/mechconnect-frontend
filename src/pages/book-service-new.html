@@ -10,13 +10,11 @@
   <link rel="stylesheet" href="./footer/footer.css">
 
   <!-- PAGE CSS -->
- 
   <link rel="stylesheet" href="./css/book-service-new.css" />
 </head>
 
 <body data-hide-links=",services,mechanics,how-it-works,">
 
-  <!-- HEADER -->
   <div id="header"></div>
 
   <!-- ================= FIND MECHANIC SECTION ================= -->
@@ -32,11 +30,10 @@
 
       <select id="service">
         <option value="">Select Service</option>
-        <option value="cars">Car Maintenance</option>
-        <option value="bikes">Bike Maintenance</option>
-        <option value="both">Both Cars & Bikes</option>
-        <option value="EMERGENCY">Emergency Repair</option>
-        <option value="DOORSTEP">Doorstep Service</option>
+        <option value="car">Car Maintenance</option>
+        <option value="bike">Bike Maintenance</option>
+        <!-- <option value="both">Both Cars & Bikes</option> -->
+        <!-- <option value="EMERGENCY">Emergency Repair</option> -->
       </select>
 
       <button id="searchBtn">Search Mechanics</button>
@@ -55,35 +52,47 @@
     <div class="steps-wrapper">
 
       <!-- STEP 1 -->
-      <section id="step1" class="booking-step active">
-        <h2>Select Your Service Package</h2>
+<section id="step1" class="booking-step active">
+  <h2>Select Your Service Package</h2>
 
-        <div class="package-grid">
-          <div class="package-card" data-package="basic">
-            <h3>Basic Service</h3>
-            <p>Oil Change, Safety Check</p>
-            <strong>₹799</strong>
-          </div>
+  <!-- BIKE PACKAGES -->
+<div class="package-grid">
 
-          <div class="package-card" data-package="standard">
-            <h3>Standard Service</h3>
-            <p>Brake, Air Filter, Scan</p>
-            <strong>₹1499</strong>
-          </div>
+  <!-- BIKE PACKAGES -->
+  <div class="package-card" data-package="bike">
+    <h3>Basic Bike Service</h3>
+    <p>Oil Change, Chain Lube</p>
+    <strong>₹499</strong>
+  </div>
 
-          <div class="package-card" data-package="premium">
-            <h3>Premium Service</h3>
-            <p>Engine, AC, Alignment</p>
-            <strong>₹2499</strong>
-          </div>
-        </div>
+  <div class="package-card" data-package="bike">
+    <h3>Premium Bike Service</h3>
+    <p>Engine, Brake, Wash</p>
+    <strong>₹999</strong>
+  </div>
 
-        <button id="step1Next" class="btn-primary next-btn">Continue</button>
-      </section>
+  <!-- CAR PACKAGES -->
+  <div class="package-card" data-package="car">
+    <h3>Basic Car Service</h3>
+    <p>Oil Change, Safety Check</p>
+    <strong>₹1499</strong>
+  </div>
+
+  <div class="package-card" data-package="car">
+    <h3>Premium Car Service</h3>
+    <p>Engine, AC, Alignment</p>
+    <strong>₹2499</strong>
+  </div>
+
+</div>
+
+
+  <button id="step1Next" class="btn-primary next-btn">Continue</button>
+</section>
 
       <!-- STEP 2 -->
       <section id="step2" class="booking-step">
-        <h2>Select Date & Time</h2>
+        <h2>Select Date, Time & Service Mode</h2>
 
         <input type="date" id="serviceDate" />
 
@@ -92,6 +101,30 @@
           <button class="time-slot" data-time="11–1 PM">11–1 PM</button>
           <button class="time-slot" data-time="1–3 PM">1–3 PM</button>
           <button class="time-slot" data-time="3–5 PM">3–5 PM</button>
+        </div>
+
+        <!-- SERVICE MODE -->
+        <div class="service-mode-group">
+  <label class="section-title">Service Mode</label>
+
+  <div class="service-mode-options">
+    <label class="service-option">
+      <input type="radio" name="serviceMode" value="DOORSTEP" checked>
+      <span>🚗 Doorstep Service</span>
+    </label>
+
+    <label class="service-option">
+      <input type="radio" name="serviceMode" value="GARAGE">
+      <span>🏠 Garage Visit</span>
+    </label>
+  </div>
+</div>
+
+        <!-- ADDRESS -->
+        <div class="form-group service-address-card" id="addressBox">
+
+          <label>Service Address</label>
+          <textarea id="serviceAddress" placeholder="Enter your address"></textarea>
         </div>
 
         <button id="step2Back" class="btn-outline">Back</button>
@@ -132,25 +165,11 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
   <div id="footer"></div>
-
-  <!-- SCRIPTS -->
 
   <script src="./script/book-service-new.js"></script>
   <script src="./header-footer/h-loader.js"></script>
   <script src="./footer/f-loader.js"></script>
-
-  <!-- COMMON FOOTER SCROLL -->
-  <script>
-    document.addEventListener("click", e => {
-      if (e.target.matches("#goFooter")) {
-        e.preventDefault();
-        const footer = document.querySelector("#site-footer");
-        footer && footer.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  </script>
-
+<script> document.addEventListener("click", e => { if (e.target.matches("#goFooter")) { e.preventDefault(); const footer = document.querySelector("#site-footer"); footer && footer.scrollIntoView({ behavior: "smooth" }); } }); </script>
 </body>
 </html>

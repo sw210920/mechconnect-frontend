@@ -68,6 +68,8 @@ document.querySelector("#customerForm").addEventListener("submit", async e => {
     localStorage.setItem("mc_user", JSON.stringify({
       customerId: customer.customerId,
       name: customer.firstName || customer.name || customer.email || email,
+      firstName : customer.firstName,
+      lastName : customer.lastName,
       email: customer.email,
       role: "customer"   // keep a role for client-side guards
     }));

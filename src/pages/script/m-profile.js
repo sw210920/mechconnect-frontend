@@ -50,7 +50,7 @@ async function loadProfile() {
         console.log("Loading mechanic profile:", mechanicId);
 
         // 🔴 FIXED ENDPOINT (must exist in backend)
-        const res = await fetch(`http://localhost:6060/api/mechanic/${mechanicId}`);
+        const res = await fetch(`http://localhost:6060/api/mechanic/${mechanicId}/profile`);
 
         if (!res.ok) {
             throw new Error("Profile fetch failed");

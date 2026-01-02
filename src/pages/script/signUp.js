@@ -97,7 +97,7 @@ fetch("http://localhost:6060/api/saveCustomer", {
     // YearsOfExperience: form.experience.value.trim(),
       YearsOfExperience: document.getElementById("mechanic-experience").value,
 
-      Specialization: form.specialization.value.trim(),
+      specialization: form.specialization.value.trim(),
     ServiceLocation: form.location.value.trim(),
           //ServiceLocation: document.getElementById("mechanic-location").trim,
 

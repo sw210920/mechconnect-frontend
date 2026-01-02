@@ -61,8 +61,18 @@ function createRequestCard(req) {
     <div class="request-info">
       <h3>Customer: ${req.customerName}</h3>
       <p><strong>Service:</strong> ${req.serviceType}</p>
+      
+    <p><strong>Service Mode:</strong> ${req.serviceMode}</p>
+
+    ${
+      req.serviceMode === "DOORSTEP"
+        ? `<p><strong>Service Address:</strong> ${req.serviceAddress}</p>`
+        : ""
+    }
+      <p><strong>Package:</strong> ${req.packageName}</p>
       <p><strong>Location:</strong> ${req.serviceLocation}</p>
-      <p><strong>Date:</strong> ${req.date}</p>
+       <p><strong>Location:</strong> ${req.serviceLocation}</p>
+      <p><strong>Date:</strong> ${req.serviceDate}</p>
       <p><strong>Time:</strong> ${req.time}</p>
       <p><strong>Vehicle:</strong> ${req.make} ${req.model}</p>
     <p><strong>Year:</strong> ${req.vehicleYear}</p>
@@ -106,19 +116,42 @@ function acceptRequest(requestId) {
 /* =====================================================
    REJECT REQUEST
 ===================================================== */
+// function rejectRequest(requestId) {
+
+//   if (!confirm("Reject this service request?")) return;
+
+//   fetch(`http://localhost:6060/api/mechanic/request/${requestId}/reject`, {
+//     method: "Post"
+//   })
+//   .then(res => {
+//     if (!res.ok) throw new Error();
+//     removeRequestCard(requestId);
+//     alert("Request rejected ❌");
+//   })
+//   .catch(() => alert("Failed to reject request"));
+// }
+
+
+
 function rejectRequest(requestId) {
 
-  if (!confirm("Reject this service request?")) return;
+    if (!confirm("Reject this service request?")) return;
 
-  fetch(`http://localhost:6060/api/mechanic/request/${requestId}/reject`, {
-    method: "PUT"
-  })
-  .then(res => {
-    if (!res.ok) throw new Error();
-    removeRequestCard(requestId);
-    alert("Request rejected ❌");
-  })
-  .catch(() => alert("Failed to reject request"));
+    fetch("http://localhost:6060/api/mechanic/request/${requestId}/reject", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            requestId: requestId
+        })
+    })
+    .then(res => {
+        if (!res.ok) throw new Error();
+        removeRequestCard(requestId);
+        alert("Request rejected ❌");
+    })
+    .catch(() => alert("Failed to reject request"));
 }
 
 /* =====================================================

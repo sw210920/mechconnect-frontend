@@ -35,7 +35,7 @@ const changePassBtn = document.getElementById("changePasswordBtn");
 // 2️⃣ Load customer profile
 // -------------------------------------------------------------
 function loadProfile() {
-    fetch(`http://localhost:6060/api/customer/${customerId}`)
+    fetch(`http://localhost:6060/api/customer/profile/${customerId}`)
         .then(res => {
             if (!res.ok) throw new Error("Profile load failed");
             return res.json();
@@ -99,7 +99,7 @@ saveBtn.addEventListener("click", () => {
         email: sessionUser.email
     };
 
-    fetch("http://localhost:6060/api/customer/update", {
+    fetch("http://localhost:6060/api/customer/profile/update", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedUser)
