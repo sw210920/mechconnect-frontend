@@ -67,6 +67,7 @@ async function loadProfile() {
         document.getElementById("experience").value = data.yearsOfExperience || "";
         document.getElementById("specialization").value = data.specialization || "";
         document.getElementById("location").value = data.serviceLocation || "";
+        document.getElementById("address").value = data.address || "";
         document.getElementById("certifications").value = data.certifications || "";
         document.getElementById("bio").value = data.bio || "";
 
@@ -103,7 +104,7 @@ form.addEventListener("submit", async e => {
         yearsOfExperience: experience.value,
         specialization: specialization.value,
         serviceLocation: locationInput.value,
-
+        address: address.value,
         certifications: certifications.value,
         bio: bio.value
     };

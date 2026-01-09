@@ -280,3 +280,51 @@
   margin-top: 8px;
   font-weight: 500;
 }
+
+
+.vehicle-line {
+  background: transparent !important;
+  padding: 0;
+}
+
+/* Highlight ONLY customer address for mechanic */
+.customer-address {
+  background: #f5f7ff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+/* ==============================
+   Orders Filter Styling
+============================== */
+
+.order-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* margin: 20px 0 30px; */
+}
+
+.order-filter .filter-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+}
+
+#orderStatus {
+  min-width: 200px;       /* ⬅ makes it bigger */
+  padding: 10px 14px;     /* ⬅ height & spacing */
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#orderStatus:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+}

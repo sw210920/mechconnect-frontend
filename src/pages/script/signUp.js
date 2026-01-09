@@ -100,6 +100,7 @@ fetch("http://localhost:6060/api/saveCustomer", {
       specialization: form.specialization.value.trim(),
     ServiceLocation: form.location.value.trim(),
           //ServiceLocation: document.getElementById("mechanic-location").trim,
+      address: document.getElementById("address").value.trim(),
 
      Certifications: form.certifications.value.trim(),
       Bio: form.bio.value.trim(),
