@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — MGX Style</title>
+  <link rel="stylesheet" href="./css/contact_us.css">
+    <link rel="stylesheet" href="./header-footer/header.css">
+        <link rel="stylesheet" href="./footer/footer.css">
+
+
+
+</head>
+
+<body data-hide-links=",services,mechanics,how-it-works">
+<div id="header" ></div>
+  <!-- Page Wrapper -->
+  <div class="page">
+
+    <h1 class="page-title">Contact Us</h1>
+    <p class="page-subtitle">We’re here to help — reach out anytime.</p>
+
+    <div class="contact-wrapper">
+
+      <!-- Contact Info -->
+      <div class="contact-info-card">
+
+        <h2>Get in touch</h2>
+
+        <div class="info-item">
+          <div class="icon">📞</div>
+          <div>
+            <p class="label">Phone</p>
+            <p class="value">+91 **********</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">✉️</div>
+          <div>
+            <p class="label">Email</p>
+            <p class="value">support@example.com</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="icon">📍</div>
+          <div>
+            <p class="label">Location</p>
+            <p class="value">Pune, Maharashtra, India</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contactForm" class="contact-form">
+
+        <h2>Send us a message</h2>
+
+        <div class="form-group">
+          <input type="text" id="name" required>
+          <label for="name">Your Name</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" id="email" required>
+          <label for="email">Your Email</label>
+        </div>
+
+        <div class="form-group">
+          <textarea id="message" rows="5" required></textarea>
+          <label for="message">Your Message</label>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+
+        <p id="successMessage" class="success">Message sent successfully!</p>
+
+      </form>
+    </div>
+
+  </div>
+
+  <div id="footer" ></div>
+
+  <script src="./script/contact_us.js"></script>
+  <script src="./header-footer/h-loader.js"></script>
+  <script src="./footer/f-loader.js"></script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // handle click on header link BEFORE footer exists
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#goFooter")) {
+      e.preventDefault();
+
+      function scrollNow() {
+        const footer = document.querySelector("#site-footer");
+        if (footer) {
+          footer.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // If footer already loaded → scroll immediately
+      if (document.querySelector("#site-footer")) {
+        scrollNow();
+      } 
+      else {
+        // Wait until footer is loaded → scroll
+        window.addEventListener("footer-loaded", scrollNow, { once: true });
+      }
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MechConnect - Expert Vehicle Maintenance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <span>MC</span>
+                    </div >
+                    <div class="logo-text-wrapper">
+                    <span class="logo-text">MechConnect</span>
+                    <span class="logo-tagline">Revive & drive</span>
+                    </div>
+                                                                                    </a>
+
+                                                                                    <!-- Desktop Navigation -->
+                                                <nav class="nav-desktop">
+                                                    <a href="#home"  class="nav-link active">Home</a>
+                                                        <a href="#services" class="nav-link">Services</a>
+                                                        <a href="#mechanics" class="nav-link">Mechanics</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                                                        <a href="#about"  class="nav-link">About</a>
+                    <div class="nav-buttons">
+                        <a href="src/pages/signIn.html"><button class="btn btn-outline">Sign In</button></a>
+                        <a href="./src/pages/signUp.html"><button class="btn btn-primary">Sign Up</button></a>
+                        
+                                                        </div>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <!-- <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                                                    </button> -->
+            </div>
+
+            <!-- Mobile Navigation -->
+            <!-- <nav class="nav-mobile" id="mobileNav">
+                                                                                                                    <a href="#home"  class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#mechanics" class="nav-link">Mechanics</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <div class="nav-buttons-mobile">
+                    <button class="btn btn-outline">Sign In</button>
+                    <button class="btn btn-primary">Sign Up</button>
+                </div>
+            </nav> -->
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="animated-bg">
+                    <div class="blob blob-1"></div>
+                    <div class="blob blob-2"></div>
+                    <div class="blob blob-3"></div>
+                    <div class="blob blob-4"></div>
+                </div>
+                
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1 class="hero-title">
+                                Expert <span class="gradient-text">Maintenance</span> For Your Vehicle
+                            </h1>
+                            <p class="hero-subtitle"><strong>Revive & drive</strong> with Mech Connect</p>
+                            <p class="hero-description">
+                                Book top-rated mechanics for your car or bike. Choose between doorstep service or visit the nearest mechanic.
+                            </p>
+                            
+                            <div class="vehicle-selector">
+                                <button class="vehicle-btn active" data-vehicle="car">
+                                    <i class="fas fa-car"></i>
+                                    <span>Car</span>
+                                </button>
+                                <button class="vehicle-btn" data-vehicle="bike">
+                                    <i class="fas fa-motorcycle"></i>
+                                    <span>Bike</span>
+                                </button>
+                            </div>
+                            
+                            <div class="hero-buttons">
+                                <button class="btn btn-primary btn-lg" id="bookNowBtn">
+                                    Book Now <i class="fas fa-chevron-right"></i>
+                                </button>
+                                <button class="btn btn-outline btn-lg">
+                                    Explore Services
+                                </button>
+                            </div>
+                            
+                            <div class="social-proof">
+                                <div class="avatars">
+                                    <img src="https://i.pravatar.cc/100?img=1" alt="User">
+                                    <img src="https://i.pravatar.cc/100?img=2" alt="User">
+                                    <img src="https://i.pravatar.cc/100?img=3" alt="User">
+                                    <img src="https://i.pravatar.cc/100?img=4" alt="User">
+                                </div>
+                                <span><strong>1000+</strong> satisfied customers this month</span>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-image">
+                            <div class="image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Mechanic servicing a car">
+                                <div class="image-overlay"></div>
+                                <div class="mechanic-info">
+                                    <div class="mechanic-avatar">
+                                        <img src="https://i.pravatar.cc/100?img=12" alt="Mechanic">
+                                    </div>
+                                    <div class="mechanic-details">
+                                        <h3>James Wilson</h3>
+                                        <p>Master Mechanic • 4.9 ★</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="floating-card">
+                                <div class="status-indicator"></div>
+                                <div class="card-content">
+                                    <p class="card-title">Available Now</p>
+                                    <p class="card-subtitle">12 Mechanics Nearby</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Why Choose MechConnect?</h2>
+                        <p>We provide convenient, transparent, and high-quality maintenance services for your vehicles</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Doorstep Service</h3>
+                            <p>Our mechanics come to your location, saving you time and hassle. No need to visit a garage.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <h3>Expert Mechanics</h3>
+                            <p>All our mechanics are certified, experienced, and thoroughly vetted for quality service.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>Transparent Pricing</h3>
+                            <p>Know exactly what you're paying for with our upfront, no-surprise pricing model.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Service Packages Section -->
+            <section class="service-packages" id="services">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Service Packages</h2>
+                        <p>Choose the right package for your <span id="selectedVehicleText">car</span> maintenance needs</p>
+                    </div>
+                    
+                    <div class="packages-grid">
+                        <div class="package-card">
+                            <div class="package-header">
+                                <h3>Basic Service</h3>
+                                <div class="package-price">
+                                    <span class="price" data-car="$79" data-bike="$49">$79</span>
+                                    <span class="period">/service</span>
+                                </div>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> Oil & Filter Change</li>
+                                <li><i class="fas fa-check"></i> Fluid Level Check & Top-up</li>
+                                <li><i class="fas fa-check"></i> Battery Check</li>
+                                <li><i class="fas fa-check"></i> Tire Pressure Check</li>
+                                <li><i class="fas fa-check"></i> Basic Safety Inspection</li>
+                            </ul>
+                            <button class="btn btn-outline package-btn">Select Package</button>
+                        </div>
+                        
+                        <div class="package-card popular">
+                            <div class="popular-badge">Popular</div>
+                            <div class="package-header">
+                                <h3>Standard Service</h3>
+                                <div class="package-price">
+                                    <span class="price" data-car="$149" data-bike="$89">$149</span>
+                                    <span class="period">/service</span>
+                                </div>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> Everything in Basic Service</li>
+                                <li><i class="fas fa-check"></i> Brake Check & Adjustment</li>
+                                <li><i class="fas fa-check"></i> Air Filter Replacement</li>
+                                <li><i class="fas fa-check"></i> Spark Plug Check</li>
+                                <li><i class="fas fa-check"></i> Detailed Diagnostics Report</li>
+                            </ul>
+                            <button class="btn btn-primary package-btn">Select Package</button>
+                        </div>
+                        
+                        <div class="package-card">
+                            <div class="package-header">
+                                <h3>Premium Service</h3>
+                                <div class="package-price">
+                                    <span class="price" data-car="$249" data-bike="$129">$249</span>
+                                    <span class="period">/service</span>
+                                </div>
+                            </div>
+                            <ul class="package-features">
+                                <li><i class="fas fa-check"></i> Everything in Standard Service</li>
+                                <li><i class="fas fa-check"></i> Complete Engine Tune-up</li>
+                                <li><i class="fas fa-check"></i> Fuel System Cleaning</li>
+                                <li><i class="fas fa-check"></i> Wheel Alignment Check</li>
+                                <li><i class="fas fa-check"></i> AC System Check</li>
+                                <li><i class="fas fa-check"></i> Extended 3-month Warranty</li>
+                            </ul>
+                            <button class="btn btn-outline package-btn">Select Package</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section class="how-it-works" id="how-it-works">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>How It Works</h2>
+                        <p>Get your vehicle serviced in just a few easy steps</p>
+                    </div>
+                    
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <div class="step-number">1</div>
+                            <h3>Select Your Service</h3>
+                            <p>Choose between car or bike maintenance and select the service package that best suits your needs.</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="step-number">2</div>
+                            <h3>Pick Location & Time</h3>
+                            <p>Choose whether you want doorstep service or visit a nearby garage. Select a date and time that works for you.</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="step-number">3</div>
+                            <h3>Get Expert Service</h3>
+                            <p>Our verified mechanics will perform the service at your chosen location with quality parts and tools.</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="step-number">4</div>
+                            <h3>Pay & Review</h3>
+                            <p>Once the service is complete, make a secure payment and share your feedback to help our community.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>What Our Customers Say</h2>
+                        <p>Hear from vehicle owners who've experienced the convenience of MechConnect</p>
+                    </div>
+                    
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-card active" data-testimonial="0">
+                            <div class="testimonial-content">
+                                <div class="testimonial-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=1" alt="Michael Johnson">
+                                </div>
+                                <div class="testimonial-text">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <blockquote>"MechConnect made it incredibly easy to get my car serviced. The mechanic came right to my doorstep and fixed the issues while I worked from home. Saved me hours of waiting at a garage!"</blockquote>
+                                    <div class="testimonial-author">
+                                        <h4>Michael Johnson</h4>
+                                        <p>Car Owner</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card" data-testimonial="1">
+                            <div class="testimonial-content">
+                                <div class="testimonial-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=5" alt="Sarah Williams">
+                                </div>
+                                <div class="testimonial-text">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <blockquote>"As an avid biker, keeping my motorcycle in top condition is essential. The mechanics on MechConnect are knowledgeable and professional. Great service at competitive prices!"</blockquote>
+                                    <div class="testimonial-author">
+                                        <h4>Sarah Williams</h4>
+                                        <p>Bike Enthusiast</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card" data-testimonial="2">
+                            <div class="testimonial-content">
+                                <div class="testimonial-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=3" alt="David Chen">
+                                </div>
+                                <div class="testimonial-text">
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <blockquote>"Managing a small fleet of delivery vehicles is so much easier with MechConnect. I can schedule maintenance for multiple vehicles with different mechanics based on location and availability."</blockquote>
+                                    <div class="testimonial-author">
+                                        <h4>David Chen</h4>
+                                        <p>Fleet Manager</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-navigation">
+                            <div class="testimonial-dots">
+                                <button class="dot active" data-testimonial="0"></button>
+                                <button class="dot" data-testimonial="1"></button>
+                                <button class="dot" data-testimonial="2"></button>
+                            </div>
+                            <div class="testimonial-arrows">
+                                <button class="arrow-btn" id="prevTestimonial">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="arrow-btn" id="nextTestimonial">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                    
+            <!-- CTA Section -->
+            <section class="cta">
+                <div class="container">
+                    <div class="cta-content">
+                        <div class="cta-text">
+                            <h2>Ready to Book Your Service?</h2>
+                            <p>Join thousands of satisfied customers who trust MechConnect for their vehicle maintenance needs. Book now and experience hassle-free service!</p>
+                            <div class="cta-buttons">
+                                <button class="btn btn-secondary btn-lg" id="ctaBookBtn" >
+                                    <i  class="fas fa-calendar-alt"></i>
+                                    Book a Service
+                                </button>
+                                <button class="btn btn-outline-white btn-lg">
+                                    Find a Mechanic
+                                </button> 
+                            </div>
+                        </div>
+                        <div class="cta-image">
+                            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Car maintenance">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Book Service Page -->
+        <div id="book" class="page">
+            <div class="container">
+                <div class="booking-wrapper">
+                    <div class="booking-header">
+                        <h1>Book Your Service</h1>
+                        <p>Complete the steps below to book your <span id="bookingVehicleType">car</span> maintenance service</p>
+                    </div>
+
+                    <!-- Progress Indicator -->
+                    <div class="progress-indicator" id="progressIndicator">
+                        <div class="progress-line">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="progress-steps">
+                            <div class="progress-step active">
+                                <div class="step-circle">1</div>
+                                <span>Select Service</span>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-circle">2</div>
+                                <span>Date & Time</span>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-circle">3</div>
+                                <span>Vehicle Details</span>
+                            </div>
+                            <div class="progress-step">
+                                <div class="step-circle">4</div>
+                                <span>Confirmation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Steps -->
+                    <div class="booking-steps">
+                        <!-- Step 1: Service Selection -->
+                        <div class="booking-step active" id="step1">
+                            <div class="step-content">
+                                <h2>Select Vehicle Type</h2>
+                                <div class="vehicle-selector-booking">
+                                    <button class="vehicle-btn-booking active" data-vehicle="car">
+                                        <i class="fas fa-car"></i>
+                                        <span>Car</span>
+                                    </button>
+                                    <button class="vehicle-btn-booking" data-vehicle="bike">
+                                        <i class="fas fa-motorcycle"></i>
+                                        <span>Bike</span>
+                                    </button>
+                                </div>
+
+                                <h2>Select Service Package</h2>
+                                <div class="packages-grid-booking">
+                                    <div class="package-card-booking" data-package="basic">
+                                        <div class="package-header">
+                                            <h3>Basic Service</h3>
+                                            <div class="package-price">
+                                                <span class="price" data-car="$79" data-bike="$49">$79</span>
+                                            </div>
+                                        </div>
+                                        <ul class="package-features">
+                                            <li><i class="fas fa-check"></i> Oil & Filter Change</li>
+                                            <li><i class="fas fa-check"></i> Fluid Level Check & Top-up</li>
+                                            <li><i class="fas fa-check"></i> Basic Safety Inspection</li>
+                                        </ul>
+                                        <div class="package-radio">
+                                            <input type="radio" name="package" value="basic" id="basic">
+                                        </div>
+                                    </div>
+
+                                    <div class="package-card-booking popular" data-package="standard">
+                                        <div class="popular-badge">Popular</div>
+                                        <div class="package-header">
+                                            <h3>Standard Service</h3>
+                                            <div class="package-price">
+                                                <span class="price" data-car="$149" data-bike="$89">$149</span>
+                                            </div>
+                                        </div>
+                                        <ul class="package-features">
+                                            <li><i class="fas fa-check"></i> Everything in Basic Service</li>
+                                            <li><i class="fas fa-check"></i> Brake Check & Adjustment</li>
+                                            <li><i class="fas fa-check"></i> Air Filter Replacement</li>
+                                        </ul>
+                                        <div class="package-radio">
+                                            <input type="radio" name="package" value="standard" id="standard">
+                                        </div>
+                                    </div>
+
+                                    <div class="package-card-booking" data-package="premium">
+                                        <div class="package-header">
+                                            <h3>Premium Service</h3>
+                                            <div class="package-price">
+                                                <span class="price" data-car="$249" data-bike="$129">$249</span>
+                                            </div>
+                                        </div>
+                                        <ul class="package-features">
+                                            <li><i class="fas fa-check"></i> Everything in Standard Service</li>
+                                            <li><i class="fas fa-check"></i> Complete Engine Tune-up</li>
+                                            <li><i class="fas fa-check"></i> Fuel System Cleaning</li>
+                                        </ul>
+                                        <div class="package-radio">
+                                            <input type="radio" name="package" value="premium" id="premium">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h2>Service Location</h2>
+                                <div class="location-options">
+                                    <div class="location-option">
+                                        <input type="radio" name="location" value="doorstep" id="doorstep" checked>
+                                        <label for="doorstep" class="location-card">
+                                            <div class="location-icon">
+                                                <i class="fas fa-home"></i>
+                                            </div>
+                                            <div class="location-info">
+                                                <h3>Doorstep Service</h3>
+                                                <p>Our mechanics will come to your location to perform the service</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="location-option">
+                                        <input type="radio" name="location" value="garage" id="garage">
+                                        <label for="garage" class="location-card">
+                                            <div class="location-icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="location-info">
+                                                <h3>Garage Visit</h3>
+                                                <p>Visit one of our partner garages nearest to your location</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="step-navigation">
+                                    <button class="btn btn-primary" id="step1Next">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Date & Time Selection -->
+                        <div class="booking-step" id="step2">
+                            <div class="step-content">
+                                <h2>Select Date</h2>
+                                <div class="calendar-wrapper">
+                                    <div class="calendar" id="calendar"></div>
+                                </div>
+
+                                <h2>Select Time Slot</h2>
+                                <div class="time-slots">
+                                    <button class="time-slot" data-time="9:00 AM - 11:00 AM">
+                                        <i class="fas fa-clock"></i>
+                                        9:00 AM - 11:00 AM
+                                    </button>
+                                    <button class="time-slot" data-time="11:00 AM - 1:00 PM">
+                                        <i class="fas fa-clock"></i>
+                                        11:00 AM - 1:00 PM
+                                    </button>
+                                    <button class="time-slot" data-time="1:00 PM - 3:00 PM">
+                                        <i class="fas fa-clock"></i>
+                                        1:00 PM - 3:00 PM
+                                    </button>
+                                    <button class="time-slot" data-time="3:00 PM - 5:00 PM">
+                                        <i class="fas fa-clock"></i>
+                                        3:00 PM - 5:00 PM
+                                    </button>
+                                    <button class="time-slot" data-time="5:00 PM - 7:00 PM">
+                                        <i class="fas fa-clock"></i>
+                                        5:00 PM - 7:00 PM
+                                    </button>
+                                </div>
+
+                                <div class="step-navigation">
+                                    <button class="btn btn-outline" id="step2Back">Back</button>
+                                    <button class="btn btn-primary" id="step2Next">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Vehicle Details -->
+                        <div class="booking-step" id="step3">
+                            <div class="step-content">
+                                <h2>Vehicle Details</h2>
+                                <div class="form-card">
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="make">Make</label>
+                                            <input type="text" id="make" placeholder="e.g. Toyota, Honda" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="model">Model</label>
+                                            <input type="text" id="model" placeholder="e.g. Corolla, Civic" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="year">Year</label>
+                                            <input type="text" id="year" placeholder="e.g. 2020" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="registration">Registration Number</label>
+                                            <input type="text" id="registration" placeholder="e.g. ABC123" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h2>Your Contact Information</h2>
+                                <div class="form-card">
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="name">Full Name</label>
+                                            <input type="text" id="name" placeholder="Enter your full name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone">Phone Number</label>
+                                            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                                        </div>
+                                        <div class="form-group full-width">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" id="email" placeholder="Enter your email address" required>
+                                        </div>
+                                        <div class="form-group full-width">
+                                            <label for="address">Address (for doorstep service)</label>
+                                            <input type="text" id="address" placeholder="Enter your complete address">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="step-navigation">
+                                    <button class="btn btn-outline" id="step3Back">Back</button>
+                                    <button class="btn btn-primary" id="step3Next">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Confirmation -->
+                        <div class="booking-step" id="step4">
+                            <div class="step-content">
+                                <h2>Review Your Booking</h2>
+                                <div class="booking-summary">
+                                    <div class="summary-header">
+                                        <div class="service-icon">
+                                            <i class="fas fa-car" id="summaryVehicleIcon"></i>
+                                        </div>
+                                        <div class="service-info">
+                                            <h3 id="summaryServiceTitle">Standard Service</h3>
+                                            <p id="summaryVehicleType">Car Maintenance</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="summary-details">
+                                        <div class="detail-row">
+                                            <span class="detail-label">Service Date</span>
+                                            <span class="detail-value" id="summaryDate">-</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Service Time</span>
+                                            <span class="detail-value" id="summaryTime">-</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Service Location</span>
+                                            <span class="detail-value" id="summaryLocation">-</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Vehicle</span>
+                                            <span class="detail-value" id="summaryVehicle">-</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Registration Number</span>
+                                            <span class="detail-value" id="summaryRegistration">-</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Customer Name</span>
+                                            <span class="detail-value" id="summaryCustomerName">-</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Contact Number</span>
+                                            <span class="detail-value" id="summaryPhone">-</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Email Address</span>
+                                            <span class="detail-value" id="summaryEmail">-</span>
+                                        </div>
+                                        <div class="detail-row" id="summaryAddressRow">
+                                            <span class="detail-label">Service Address</span>
+                                            <span class="detail-value" id="summaryAddress">-</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="summary-total">
+                                        <div class="total-row">
+                                            <span class="total-label">Total Price:</span>
+                                            <span class="total-price" id="summaryPrice">$149</span>
+                                        </div>
+                                        <p class="payment-note">Payment will be collected after the service is completed</p>
+                                    </div>
+                                </div>
+
+                                <div class="step-navigation">
+                                    <button class="btn btn-outline" id="step4Back">Back</button>
+                                    <button class="btn btn-primary" id="confirmBooking">Confirm Booking</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Booking Complete -->
+                        <div class="booking-complete" id="bookingComplete">
+                            <div class="complete-content">
+                                <div class="success-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h2>Booking Confirmed!</h2>
+                                <p>Thank you for booking with MechConnect. Your <span id="completeVehicleType">car</span> maintenance service has been scheduled for <span id="completeDate">-</span> at <span id="completeTime">-</span>.</p>
+                                
+                                <div class="booking-details">
+                                    <h3>Booking Details</h3>
+                                    <div class="details-grid">
+                                        <div class="detail-item">
+                                            <span class="label">Service Type:</span>
+                                            <span class="value" id="completeServiceType">-</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Vehicle:</span>
+                                            <span class="value" id="completeVehicle">-</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Location:</span>
+                                            <span class="value" id="completeLocation">-</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Booking Ref:</span>
+                                            <span class="value" id="completeRef">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <p class="confirmation-note">A confirmation email has been sent to <span id="completeEmail">-</span>. You'll receive a reminder 24 hours before your appointment.</p>
+                                
+                                <div class="complete-buttons">
+                                    <button class="btn btn-outline" onclick="window.print()">Print Details</button>
+                                    <button class="btn btn-primary" id="backToHome">Back to Home</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 404 Page -->
+        <div id="404" class="page">
+            <div class="container">
+                <div class="not-found">
+                    <div class="not-found-content">
+                        <div class="not-found-icon">
+                            <span>404</span>
+                        </div>
+                        <h1>Page Not Found</h1>
+                        <p>The page you are looking for doesn't exist or has been moved.</p>
+                        <button class="btn btn-primary" id="backToHomeBtn">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Home
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container"  id="about">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="#" class="footer-logo">
+                        <div class="logo-icon">
+                            <span>MC</span>
+                        </div>
+                        <span class="logo-text">MechConnect</span>
+                    </a>
+                    <p>Connecting you with expert mechanics for seamless car and bike maintenance services.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Car Maintenance</a></li>
+                        <li><a href="#">Bike Maintenance</a></li>
+                        <li><a href="#">Emergency Service</a></li>
+                        <li><a href="#">Doorstep Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="./src/pages/about_us.html">About Us</a></li>
+                        <li><a href="#">Our Mechanics</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="./src/pages/contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Subscribe to our newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MechConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

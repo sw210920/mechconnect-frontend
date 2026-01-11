@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join MechConnect — Sign Up</title>
+
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="./css/signUp.css" />
+
+  <!-- Header styles -->
+  <link rel="stylesheet" href="./header-footer/header.css" />
+
+  <link rel="stylesheet" href="./footer/footer.css" />
+</head>
+
+<body data-hide-links=",services,mechanics,how-it-works">
+
+  <!-- Header Injected Here -->
+  <div id="header"></div>
+
+  <!-- Auth Page Wrapper -->
+  <div class="page">
+    <main class="card-wrap">
+      <div class="card" id="card">
+
+        <!-- Heading -->
+        <header class="card-header">
+          <h1 class="title">Join MechConnect</h1>
+          <p class="subtitle">Create your account to get started</p>
+        </header>
+
+        <!-- Tabs -->
+        <div class="tabs" role="tablist" aria-label="User type tabs">
+          <button class="tab active" data-tab="customer" id="tab-customer" role="tab" aria-selected="true">
+            🚗 Customer
+          </button>
+
+          <button class="tab" data-tab="mechanic" id="tab-mechanic" role="tab" aria-selected="false">
+            🔧 Mechanic
+          </button>
+        </div>
+
+        <!-- CUSTOMER PANEL -->
+        <section class="tab-panel active" id="customer" role="tabpanel" aria-labelledby="tab-customer">
+          <form id="customerForm" class="form">
+
+            <div class="row">
+              <div class="field">
+                <label for="customer-firstName">First Name</label>
+                <input id="customer-firstName" name="firstName" placeholder="John" required />
+              </div>
+
+              <div class="field">
+                <label for="customer-lastName">Last Name</label>
+                <input id="customer-lastName" name="lastName" placeholder="Doe" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="customer-email">Email</label>
+              <input id="customer-email" name="email" type="email" placeholder="john@example.com" required />
+            </div>
+
+            <div class="field">
+              <label for="customer-phone">Phone Number</label>
+              <input id="customer-phone" name="phone" type="tel" placeholder="+1 (555) 123-4567" required />
+            </div>
+
+            <div class="field">
+              <label for="customer-address">Address</label>
+              <input id="customer-address" name="address" placeholder="123 Main St, City, State" required />
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="customer-password">Password</label>
+                <div class="input-with-icon">
+                  <input id="customer-password" name="password" type="password" placeholder="Create password" required />
+                  <button type="button" class="toggle" data-target="customer-password">👁️</button>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="customer-confirmPassword">Confirm Password</label>
+                <div class="input-with-icon">
+                  <input id="customer-confirmPassword" name="confirmPassword" type="password" placeholder="Confirm password"
+                    required />
+                  <button type="button" class="toggle" data-target="customer-confirmPassword">👁️</button>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn primary" type="submit">Create Customer Account</button>
+          </form>
+        </section>
+
+        <!-- MECHANIC PANEL -->
+        <section class="tab-panel" id="mechanic" role="tabpanel" aria-labelledby="tab-mechanic">
+          <form id="mechanicForm" class="form">
+
+            <div class="row">
+              <div class="field">
+                <label for="mechanic-firstName">First Name</label>
+                <input id="mechanic-firstName" name="firstName" placeholder="John" required />
+              </div>
+
+              <div class="field">
+                <label for="mechanic-lastName">Last Name</label>
+                <input id="mechanic-lastName" name="lastName" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="mechanic-email">Email</label>
+                <input id="mechanic-email" name="email" type="email" placeholder="john@example.com" required />
+              </div>
+
+              <div class="field">
+                <label for="mechanic-phone">Phone Number</label>
+                <input id="mechanic-phone" name="phone" type="tel" placeholder="+1 (555) 123-4567" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="mechanic-experience">Years of Experience</label>
+                <select id="mechanic-experience" name="experience" required>
+                  <option value="">Select experience</option>
+                  <option value="1-2">1–2 years</option>
+                  <option value="3-5">3–5 years</option>
+                  <option value="6-10">6–10 years</option>
+                  <option value="10+">10+ years</option>
+                </select>
+              </div>
+              
+              <div class="field">
+                <label for="mechanic-specialization">Specialization</label>
+                <select id="mechanic-specialization" name="specialization" required>
+                  <option value="">Select specialization</option>
+                  <option value="car">Cars</option>
+                  <option value="bike">Motorcycles</option>
+                  <option value="both">Both Cars & Bikes</option>
+                  <option value="electric">Electric Vehicles</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="mechanic-location">Service Location</label>
+              <!-- <input id="mechanic-location" name="location" placeholder="City, State (service area)" required /> -->
+              <input id="mechanic-location" name="location" required />
+              <label>Address</label>
+              <textarea id="address" placeholder="Enter full address" required></textarea>
+            </div>
+
+            <div class="field">
+              <label for="mechanic-certifications">Certifications</label>
+              <input id="mechanic-certifications" name="certifications"
+                placeholder="ASE, manufacturer certifications, etc." />
+            </div>
+
+            <div class="field">
+              <label for="mechanic-bio">Bio</label>
+              <textarea id="mechanic-bio" name="bio" rows="3"
+                placeholder="Tell customers about your experience and expertise..."></textarea>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="mechanic-password">Password</label>
+                <div class="input-with-icon">
+                  <input id="mechanic-password" name="password" type="password" placeholder="Create password" required />
+                  <button type="button" class="toggle" data-target="mechanic-password">👁️</button>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="mechanic-confirmPassword">Confirm Password</label>
+                <div class="input-with-icon">
+                  <input id="mechanic-confirmPassword" name="confirmPassword" type="password"
+                    placeholder="Confirm password" required />
+                  <button type="button" class="toggle" data-target="mechanic-confirmPassword">👁️</button>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn accent" type="submit">Create Mechanic Account</button>
+          </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="card-footer">
+          <p>Already have an account?
+            <a href="./signIn.html">Sign in here</a>
+          </p>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+      <div id="footer" ></div>
+
+
+  <!-- Scripts -->
+  <script src="./script/signUp.js" defer></script>
+  <script src="./header-footer/h-loader.js" defer></script>
+<script src="./footer/f-loader.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // handle click on header link BEFORE footer exists
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#goFooter")) {
+      e.preventDefault();
+
+      function scrollNow() {
+        const footer = document.querySelector("#site-footer");
+        if (footer) {
+          footer.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // If footer already loaded → scroll immediately
+      if (document.querySelector("#site-footer")) {
+        scrollNow();
+      } 
+      else {
+        // Wait until footer is loaded → scroll
+        window.addEventListener("footer-loaded", scrollNow, { once: true });
+      }
+    }
+  });
+
+});
+</script>
+
+
+
+</body>
+
+</html>

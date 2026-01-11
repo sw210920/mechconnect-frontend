@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MechConnect — Admin Login</title>
+
+  <link rel="stylesheet" href="./css/admin_logIn.css">
+  <link rel="stylesheet" href="./header-footer/header.css">
+  <link rel="stylesheet" href="./footer/footer.css">
+</head>
+
+<body class="inner-page" data-hide-links=",services,mechanics,how-it-works" >
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="auth-container">
+
+    <div class="auth-card">
+      <h2>Admin Login</h2>
+      <p class="subtitle">Authorized access only</p>
+
+      <form id="adminLoginForm">
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" required placeholder="admin@mechconnect.com"/>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password" required placeholder="Enter password"/>
+        </div>
+
+        <button type="submit" class="btn-primary">
+          Login
+        </button>
+
+        <p id="errorMsg" class="error-text"></p>
+
+      </form>
+    </div>
+             
+  </main>
+
+   <div id="footer"></div>
+
+  <script src="./header-footer/h-loader.js"></script>
+   <script src="./footer/f-loader.js"></script>
+  <script src="./script/admin_login.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // handle click on header link BEFORE footer exists
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#goFooter")) {
+      e.preventDefault();
+
+      function scrollNow() {
+        const footer = document.querySelector("#site-footer");
+        if (footer) {
+          footer.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // If footer already loaded → scroll immediately
+      if (document.querySelector("#site-footer")) {
+        scrollNow();
+      } 
+      else {
+        // Wait until footer is loaded → scroll
+        window.addEventListener("footer-loaded", scrollNow, { once: true });
+      }
+    }
+  });
+
+});
+</script>
+
+
+</body>
+</html>

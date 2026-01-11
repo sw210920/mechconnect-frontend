@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic Profile – MechConnect</title>
+
+    <link rel="stylesheet" href="./css/m-profile.css">
+   <link rel="stylesheet" href="./header-footer/header.css">
+  <link rel="stylesheet" href="./footer/footer.css">
+</head>
+
+<body class="inner-page" data-hide-links=",services,mechanics,how-it-works" >
+
+    <div id="header"></div>
+
+    <div class="profile-container">
+
+        <h2 class="title">My Mechanic Profile</h2>
+        <p class="subtitle">View and update your professional details</p>
+
+        <!-- PROFILE FORM -->
+        <form id="mechanicProfileForm" class="profile-card">
+
+            <div class="section-title">Personal Information</div>
+
+            <div class="row">
+                <div class="field">
+                    <label>First Name</label>
+                    <input type="text" id="firstName" disabled>
+                </div>
+
+                <div class="field">
+                    <label>Last Name</label>
+                    <input type="text" id="lastName" disabled>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" id="email" disabled>
+                </div>
+
+                <div class="field">
+                    <label>Phone Number</label>
+                    <input type="text" id="phone" disabled>
+                </div>
+            </div>
+
+            <div class="section-title">Professional Details</div>
+
+            <div class="row">
+                <div class="field">
+                    <label>Years of Experience</label>
+                    <input type="text" id="experience" disabled>
+                </div>
+
+                <div class="field">
+                    <label>Specialization</label>
+                    <input type="text" id="specialization" disabled>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Service Location</label>
+                <input type="text" id="location" disabled>
+            </div>
+
+            <div class="field" >
+                <label>Address</label>
+                <input type="text"  id="address" disabled >
+            </div>
+
+            <div class="field">
+                <label>Certifications</label>
+                <input type="text" id="certifications" disabled>
+            </div>
+
+            <div class="field">
+                <label>Bio</label>
+                <textarea id="bio" rows="4" disabled></textarea>
+            </div>
+
+            <div class="buttons">
+                <button type="button" id="editBtn" class="btn btn-primary">Edit Profile</button>
+                <button type="submit" id="saveBtn" class="btn btn-success" style="display:none;">Save Changes</button>
+                <button type="button" id="cancelBtn" class="btn btn-outline" style="display:none;">Cancel</button>
+            </div>
+        </form>
+
+        <!-- CHANGE PASSWORD -->
+        <form id="changePasswordForm" class="profile-card">
+            <div class="section-title">Change Password</div>
+
+            <div class="field">
+                <label>Current Password</label>
+                <input type="password" id="currentPassword" required>
+            </div>
+
+            <div class="field">
+                <label>New Password</label>
+                <input type="password" id="newPassword" required>
+            </div>
+
+            <div class="field">
+                <label>Confirm New Password</label>
+                <input type="password" id="confirmPassword" required>
+            </div>
+
+            <button type="submit" class="btn btn-danger">Update Password</button>
+        </form>
+
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="./header-footer/h-loader.js"></script>
+  <script src="./footer/f-loader.js"></script>
+    <script src="./script/m-profile.js" defer></script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // handle click on header link BEFORE footer exists
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#goFooter")) {
+      e.preventDefault();
+
+      function scrollNow() {
+        const footer = document.querySelector("#site-footer");
+        if (footer) {
+          footer.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // If footer already loaded → scroll immediately
+      if (document.querySelector("#site-footer")) {
+        scrollNow();
+      } 
+      else {
+        // Wait until footer is loaded → scroll
+        window.addEventListener("footer-loaded", scrollNow, { once: true });
+      }
+    }
+  });
+
+});
+</script> 
+
+</body>
+</html>

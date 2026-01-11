@@ -1,0 +1,119 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile | MechConnect</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/c-profile.css">
+  <link rel="stylesheet" href="./header-footer/header.css">
+  <link rel="stylesheet" href="./footer/footer.css">
+
+</head>
+
+<body class="inner-page" data-hide-links=",services,mechanics,how-it-works" >
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <!-- PROFILE MAIN SECTION -->
+  <section class="profile-wrapper">
+
+    <h2 class="section-title">My Profile</h2>
+
+    <div class="profile-card">
+
+      <!-- LEFT: Avatar -->
+      <div class="profile-avatar">
+        <div class="avatar-circle">👤</div>
+      </div>
+
+      <!-- RIGHT: Profile Form -->
+      <div class="profile-form">
+
+        <!-- Name -->
+        <label>Name</label>
+        <input type="text" id="name" disabled>
+
+        <!-- Email -->
+        <label>Email (cannot be changed)</label>
+        <input type="email" id="email" disabled>
+
+        <!-- Phone -->
+        <label>Phone</label>
+        <input type="text" id="phone" disabled>
+
+        <!-- Address -->
+        <label>Address</label>
+        <textarea id="address" rows="3" disabled></textarea>
+
+        <!-- BUTTONS -->
+        <div class="profile-actions">
+          <button id="editProfile" class="btn btn-primary">Edit Personal Details</button>
+          <button id="saveProfile" class="btn btn-secondary" style="display:none;">Save Changes</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- CHANGE PASSWORD SECTION -->
+    <div class="password-card">
+
+      <h3>Change Password</h3>
+
+      <label>Current Password</label>
+      <input type="password" id="currentPassword"  >
+
+      <label>New Password</label>
+      <input type="password" id="newPassword"  >
+
+      <label>Confirm New Password</label>
+      <input type="password" id="confirmPassword"   >
+
+      <button  id="changePasswordBtn" class="btn btn-primary" style="margin-top: 10px;">
+        Update Password
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+ <script src="./header-footer/h-loader.js"></script>
+  <script src="./footer/f-loader.js"></script>
+  <script src="./script/c-profile.js" defer></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // handle click on header link BEFORE footer exists
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#goFooter")) {
+      e.preventDefault();
+
+      function scrollNow() {
+        const footer = document.querySelector("#site-footer");
+        if (footer) {
+          footer.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // If footer already loaded → scroll immediately
+      if (document.querySelector("#site-footer")) {
+        scrollNow();
+      } 
+      else {
+        // Wait until footer is loaded → scroll
+        window.addEventListener("footer-loaded", scrollNow, { once: true });
+      }
+    }
+  });
+
+});
+</script> 
+</body>
+</html>

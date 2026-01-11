@@ -1,0 +1,282 @@
+/* ================================
+   CUSTOMER ORDERS PAGE STYLES
+   Matches c-dashboard look & feel
+================================ */
+
+/* Prevent content from hiding behind fixed header */
+.inner-page .dashboard {
+  padding-top: 90px; /* adjust based on header height */
+}
+
+/* Center welcome section */
+.welcome-card {
+  text-align: center;
+}
+
+/* ================================
+   FILTER SELECTION (Card Style)
+================================ */
+
+/* Grid layout */
+.quick-actions .actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+/* Filter cards (same as Car / Bike selection) */
+.quick-actions .action-card {
+  cursor: pointer;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: 600;
+  border: 2px solid transparent;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.quick-actions .action-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ✅ SELECTED CARD (IMPORTANT) */
+.quick-actions .action-card.selected {
+  border-color: #6c5ce7;
+  background: #f5f6ff;
+  color: #6c5ce7;
+  box-shadow: 0 14px 32px rgba(108, 92, 231, 0.35);
+}
+
+/* ================================
+   ORDERS LIST
+================================ */
+
+.recent-box {
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* Each order card */
+.recent-box .recent-item {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  text-align: left;
+}
+
+.recent-item strong {
+  font-size: 16px;
+  color: #2c2c2c;
+}
+
+.recent-item p {
+  margin: 6px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Empty / loading text */
+.recent-list .empty {
+  text-align: center;
+  color: #888;
+  padding: 24px 0;
+  font-size: 15px;
+}
+
+/* ================================
+   STATUS COLORS
+================================ */
+
+.status-pending {
+  color: #f59e0b; /* amber */
+  font-weight: 600;
+}
+
+.status-confirmed,
+.status-accepted {
+  color: #10b981; /* green */
+  font-weight: 600;
+}
+
+.status-completed {
+  color: #3b82f6; /* blue */
+  font-weight: 600;
+}
+
+.status-rejected {
+  color: #ef4444; /* red */
+  font-weight: 600;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+  .recent-box .recent-item {
+    padding: 16px;
+  }
+
+  .quick-actions .actions-grid {
+    gap: 12px;
+  }
+}
+
+.quick-actions .h3 {
+    text-align: center;
+}
+
+
+
+/* ================================
+   FILTER DROPDOWN (Select Style)
+================================ */
+
+.order-filter {
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.custom-select {
+  position: relative;
+  user-select: none;
+}
+
+.selected-option {
+  background: #ffffff;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transition: border-color 0.2s ease;
+}
+
+.selected-option:hover {
+  border-color: #6c5ce7;
+}
+
+.arrow {
+  font-size: 14px;
+}
+
+.options {
+  position: absolute;
+  width: 100%;
+  top: 110%;
+  left: 0;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+  overflow: hidden;
+  display: none;
+  z-index: 20;
+}
+
+.options div {
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.options div:hover {
+  background: #f5f6ff;
+  color: #6c5ce7;
+}
+
+
+.order-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  /* margin: 20px 0; */
+  margin-right: 64%;
+  margin-top: 2%;
+}
+
+.filter-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+  margin-right: 45%;
+}
+
+.filter-select {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  min-width: 220px;
+}
+
+
+
+/* ================================
+   CENTER ORDERS UNDER HEADING
+================================ */
+
+/* Wrapper to center content */
+.orders-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Limit width of orders list */
+#ordersContainer {
+  width: 100%;
+  max-width: 900px;   /* 👈 controls card width */
+}
+
+/* Order cards spacing */
+.recent-item {
+  margin: 16px auto;  /* centers cards */
+}
+
+/* On large screens, keep it elegant */
+@media (min-width: 1200px) {
+  #ordersContainer {
+    max-width: 800px;
+  }
+}
+
+.recent-item p b {
+  color: #333;
+}
+
+/* .recent-item p:last-child {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+} */
+
+.highlight-box {
+  background: #f5f7ff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ✅ Vehicle always normal */
+.vehicle-line {
+  background: transparent !important;
+  padding: 0;
+}
+
+/* ✅ Only garage address highlighted */
+.garage-address {
+  background: #f5f7ff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+  font-weight: 500;
+}

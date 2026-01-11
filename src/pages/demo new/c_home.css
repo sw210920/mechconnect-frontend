@@ -1,0 +1,104 @@
+body {
+    background: #f5f7ff;
+    font-family: Inter, sans-serif;
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: 120px auto 40px;
+    padding: 0 20px;
+}
+
+/* Greeting Card */
+.welcome-card {
+    background: linear-gradient(135deg, #5A60FF, #7A4BFF);
+    color: white;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: left;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.welcome-card h2 {
+    font-size: 32px;
+    margin-bottom: 6px;
+}
+
+.welcome-card p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* Quick Actions */
+.quick-actions {
+    margin-top: 40px;
+}
+
+.quick-actions h3 {
+    margin-bottom: 15px;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.action-card {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.25s;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.action-card i {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.action-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* Recent Bookings */
+.recent-box {
+    margin-top: 40px;
+}
+
+.recent-items {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Mechanics */
+.mech-grid {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.mech-card {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.mech-card h4 {
+    margin-bottom: 5px;
+}
+
+.mech-card p {
+    margin-bottom: 4px;
+    color: #555;
+}

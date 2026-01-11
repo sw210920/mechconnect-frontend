@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Requests | MechConnect</title>
+
+    <link rel="stylesheet" href="./css/m-request.css">
+    <link rel="stylesheet" href="./header-footer/header.css">
+  <link rel="stylesheet" href="./footer/footer.css">
+</head>
+
+<body data-hide-links=",services,mechanics,how-it-works,">
+ <div id="header" ></div>
+<header class="top-bar">
+    <h2>🔧 Service Requests</h2>
+    <span class="status">Mechanic Dashboard</span>
+</header>
+
+<main class="container" id="requestsContainer">
+    <!-- Requests will load dynamically -->
+</main>
+
+<p id="emptyMsg" class="hidden">No new service requests 🚫</p>
+
+    <div id="footer" ></div>
+
+<script src="./script/m-request.js"></script>
+<script src="./header-footer/h-loader.js" defer></script>
+<script src="./footer/f-loader.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // handle click on header link BEFORE footer exists
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#goFooter")) {
+      e.preventDefault();
+
+      function scrollNow() {
+        const footer = document.querySelector("#site-footer");
+        if (footer) {
+          footer.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // If footer already loaded → scroll immediately
+      if (document.querySelector("#site-footer")) {
+        scrollNow();
+      } 
+      else {
+        // Wait until footer is loaded → scroll
+        window.addEventListener("footer-loaded", scrollNow, { once: true });
+      }
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

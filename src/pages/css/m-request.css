@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+}
+
+/* HEADER */
+.top-bar {
+    background: #0f172a;
+    color: #fff;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6%;
+}
+
+/* MAIN */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+    margin-top: 0%;
+}
+
+/* REQUEST CARD */
+.request-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.request-info h3 {
+    margin-bottom: 8px;
+}
+
+.request-info p {
+    color: #555;
+    margin-bottom: 4px;
+}
+
+/* ACTIONS */
+.request-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.accept-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.reject-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.accept-btn:hover { background: #16a34a; }
+.reject-btn:hover { background: #dc2626; }
+
+/* EMPTY */
+.hidden {
+    display: none;
+}
+
+#emptyMsg {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 18px;
+    color: #777;
+}
