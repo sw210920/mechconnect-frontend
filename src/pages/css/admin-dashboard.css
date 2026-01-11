@@ -1,0 +1,137 @@
+/* ================================
+   ADMIN DASHBOARD LAYOUT
+================================ */
+
+.admin-container {
+  display: flex;
+  min-height: calc(100vh - 120px);
+  margin-top: 90px; /* header offset */
+}
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+  width: 240px;
+  background: #0b1c2d;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  transition: background 0.2s ease;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background: #1c3553;
+}
+
+.sidebar .logout {
+  margin-top: 30px;
+  background: #b02a37;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ================================
+   CONTENT AREA
+================================ */
+
+.content {
+  flex: 1;
+  padding: 30px;
+  background: #f5f7fb;
+  overflow-x: auto;
+}
+
+#pageTitle {
+  margin-bottom: 20px;
+}
+
+/* ================================
+   DASHBOARD STATS
+================================ */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.stat-card h4 {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.stat-card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0b1c2d;
+}
+
+/* ================================
+   TABLE (Customers / Mechanics / Orders)
+================================ */
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 14px;
+}
+
+.admin-table th {
+  background: #f0f2f8;
+  font-weight: 600;
+}
+
+.admin-table tr:hover {
+  background: #f9f9ff;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}

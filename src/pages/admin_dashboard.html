@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MechConnect — Admin Dashboard</title>
+
+  <link rel="stylesheet" href="./css/admin-dashboard.css">
+  <link rel="stylesheet" href="./header-footer/header.css">
+  <link rel="stylesheet" href="./footer/footer.css">
+</head>
+
+<body class="inner-page" data-hide-links="services,mechanics,how-it-works,home">
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="admin-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h3>Admin Panel</h3>
+          <ul>
+      <li id="nav-dashboard" class="active">Dashboard</li>
+      <li id="nav-payments">Payments</li>
+      <li id="nav-customers">Customers</li>
+      <li id="nav-mechanics">Mechanics</li>
+      <li id="nav-orders">Orders</li>
+      <li id="logoutBtn" class="logout">Logout</li>
+    </ul>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <section class="content">
+
+      <!-- PAGE TITLE -->
+      <h2 id="pageTitle">Welcome, Admin 👋</h2>
+
+      <!-- DYNAMIC CONTENT AREA -->
+      <div id="contentArea">
+
+        <!-- DASHBOARD STATS (DEFAULT VIEW) -->
+        <div class="stats-grid" id="dashboardStats">
+
+          <div class="stat-card">
+            <h4>Total Orders</h4>
+            <p id="totalOrders">--</p>
+          </div>
+
+          <div class="stat-card">
+            <h4>Total Customers</h4>
+            <p id="totalCustomers">--</p>
+          </div>
+
+          <div class="stat-card">
+            <h4>Total Mechanics</h4>
+            <p id="totalMechanics">--</p>
+          </div>
+
+          <div class="stat-card">
+            <h4>Payments Enabled</h4>
+            <p>COD</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Header & Footer Loaders -->
+  <script src="./header-footer/h-loader.js"></script>
+  <script src="./footer/f-loader.js"></script>
+
+  <!-- Footer smooth scroll support -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("click", (e) => {
+        if (e.target.matches("#goFooter")) {
+          e.preventDefault();
+
+          function scrollNow() {
+            const footer = document.querySelector("#site-footer");
+            if (footer) {
+              footer.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+
+          if (document.querySelector("#site-footer")) {
+            scrollNow();
+          } else {
+            window.addEventListener("footer-loaded", scrollNow, { once: true });
+          }
+        }
+      });
+    });
+  </script>
+
+  <!-- 🔐 ADMIN AUTH GUARD -->
+  <script src="./script/admin-auth.js"></script>
+
+  <!-- 📊 ADMIN DASHBOARD LOGIC -->
+  <script src="./script/admin-dashboard.js"></script>
+
+</body>
+</html>
