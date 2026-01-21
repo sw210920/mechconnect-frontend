@@ -227,6 +227,7 @@
 function handleHomeRedirect() {
 
   const user = JSON.parse(localStorage.getItem("mc_user"));
+   const admin = JSON.parse(localStorage.getItem("mc_admin"));
 
   // Select Home links (desktop + mobile)
   const homeLinks = document.querySelectorAll(
@@ -237,10 +238,14 @@ function handleHomeRedirect() {
 
   let homeHref = "../../index.html"; // default (not logged in)
 
-  if (user && user.role) {
+     if (admin) {
+    homeHref = "./admin_dashboard.html";
+  }
+
+  else if (user && user.role) {
     if (user.role === "customer") {
       homeHref = "./c-dashboard.html";
-    } 
+    }
     else if (user.role === "mechanic") {
       homeHref = "./m-dashboard.html";
     }

@@ -328,3 +328,22 @@
   border-color: #4f46e5;
   box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
 }
+
+
+.complete-btn {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  background: #10b981;
+  color: white;
+  width: 100%;
+  transition: 0.2s;
+}
+
+.complete-btn:hover {
+  transform: translateY(-2px);
+  background: #0ea371;
+}

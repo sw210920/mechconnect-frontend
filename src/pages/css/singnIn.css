@@ -149,3 +149,17 @@ input {
 
 
 
+.admin-login-link{
+  position: absolute;
+  top: 95px;     /* adjust based on header height */
+  right: 30px;
+  font-size: 12px;
+  color: #888;
+  text-decoration: none;
+  z-index: 999;
+}
+
+.admin-login-link:hover{
+  color: #333;
+  text-decoration: underline;
+}

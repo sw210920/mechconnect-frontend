@@ -280,3 +280,25 @@
   margin-top: 8px;
   font-weight: 500;
 }
+
+
+.confirm-complete-btn {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #10b981;
+  color: #fff;
+  transition: 0.2s ease;
+}
+
+.confirm-complete-btn:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.confirm-complete-btn:active {
+  transform: scale(0.98);
+}

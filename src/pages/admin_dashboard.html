@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./footer/footer.css">
 </head>
 
-<body class="inner-page" data-hide-links="services,mechanics,how-it-works,home">
+<body class="inner-page" data-hide-links="services,mechanics,how-it-works">
 
   <!-- Header -->
   <div id="header"></div>
@@ -20,14 +20,15 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <h3>Admin Panel</h3>
-          <ul>
-      <li id="nav-dashboard" class="active">Dashboard</li>
-      <li id="nav-payments">Payments</li>
-      <li id="nav-customers">Customers</li>
-      <li id="nav-mechanics">Mechanics</li>
-      <li id="nav-orders">Orders</li>
-      <li id="logoutBtn" class="logout">Logout</li>
-    </ul>
+
+      <ul>
+        <li id="nav-dashboard" class="active">Dashboard</li>
+        <li id="nav-payments">Payments</li>
+        <li id="nav-customers">Customers</li>
+        <li id="nav-mechanics">Mechanics</li>
+        <li id="nav-orders">Orders</li>
+        <li id="logoutBtn" class="logout">Logout</li>
+      </ul>
     </aside>
 
     <!-- MAIN CONTENT -->
@@ -36,35 +37,31 @@
       <!-- PAGE TITLE -->
       <h2 id="pageTitle">Welcome, Admin 👋</h2>
 
-      <!-- DYNAMIC CONTENT AREA -->
-      <div id="contentArea">
-
-        <!-- DASHBOARD STATS (DEFAULT VIEW) -->
-        <div class="stats-grid" id="dashboardStats">
-
-          <div class="stat-card">
-            <h4>Total Orders</h4>
-            <p id="totalOrders">--</p>
-          </div>
-
-          <div class="stat-card">
-            <h4>Total Customers</h4>
-            <p id="totalCustomers">--</p>
-          </div>
-
-          <div class="stat-card">
-            <h4>Total Mechanics</h4>
-            <p id="totalMechanics">--</p>
-          </div>
-
-          <div class="stat-card">
-            <h4>Payments Enabled</h4>
-            <p>COD</p>
-          </div>
-
+      <!-- DASHBOARD STATS (DEFAULT VIEW) -->
+      <div class="stats-grid" id="dashboardStats">
+        <div class="stat-card">
+          <h4>Total Orders</h4>
+          <p id="totalOrders">--</p>
         </div>
 
+        <div class="stat-card">
+          <h4>Total Customers</h4>
+          <p id="totalCustomers">--</p>
+        </div>
+
+        <div class="stat-card">
+          <h4>Total Mechanics</h4>
+          <p id="totalMechanics">--</p>
+        </div>
+
+        <div class="stat-card">
+          <h4>Payments Enabled</h4>
+          <p>COD</p>
+        </div>
       </div>
+
+      <!-- DYNAMIC CONTENT AREA -->
+      <div id="contentArea"></div>
 
     </section>
 

@@ -7,12 +7,15 @@
   <link rel="stylesheet" href="./css/singnIn.css">
   <link rel="stylesheet" href="./header-footer/header.css">
   <link rel="stylesheet" href="./footer/footer.css">
-  
 </head>
+
 <body data-hide-links=",services,mechanics,how-it-works,">
 
+  <div id="header"></div>
 
-<div id="header" ></div>
+  <!-- ✅ Small Admin Login link (always visible, not highlighted) -->
+  <a href="./admin_logIn.html" class="admin-login-link">Admin Login</a>
+
   <div class="auth-container">
     <div class="card">
       <div class="card-header">
@@ -75,44 +78,40 @@
     </div>
   </div>
 
-    <div id="footer" ></div>
-
+  <div id="footer"></div>
 
   <script src="./script/signIn.js" defer></script>
- <script src="./header-footer/h-loader.js" defer></script>
-<script src="./footer/f-loader.js" defer></script>
+  <script src="./header-footer/h-loader.js" defer></script>
+  <script src="./footer/f-loader.js" defer></script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
 
+      // handle click on header link BEFORE footer exists
+      document.addEventListener("click", (e) => {
+        if (e.target.matches("#goFooter")) {
+          e.preventDefault();
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+          function scrollNow() {
+            const footer = document.querySelector("#site-footer");
+            if (footer) {
+              footer.scrollIntoView({ behavior: "smooth" });
+            }
+          }
 
-  // handle click on header link BEFORE footer exists
-  document.addEventListener("click", (e) => {
-    if (e.target.matches("#goFooter")) {
-      e.preventDefault();
-
-      function scrollNow() {
-        const footer = document.querySelector("#site-footer");
-        if (footer) {
-          footer.scrollIntoView({ behavior: "smooth" });
+          // If footer already loaded → scroll immediately
+          if (document.querySelector("#site-footer")) {
+            scrollNow();
+          }
+          else {
+            // Wait until footer is loaded → scroll
+            window.addEventListener("footer-loaded", scrollNow, { once: true });
+          }
         }
-      }
+      });
 
-      // If footer already loaded → scroll immediately
-      if (document.querySelector("#site-footer")) {
-        scrollNow();
-      } 
-      else {
-        // Wait until footer is loaded → scroll
-        window.addEventListener("footer-loaded", scrollNow, { once: true });
-      }
-    }
-  });
-
-});
-</script>
-
+    });
+  </script>
 
 </body>
 </html>
