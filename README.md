@@ -49,7 +49,7 @@ mechconnect-frontend/
 Replace `<your-username>` and repo name if needed:
 
 ```bash
-git clone https://github.com/<your-username>/mechconnect-frontend.git
+git clone git@github.com:sw210920/mechconnect-frontend.git
 cd mechconnect-frontend
 ```
 
