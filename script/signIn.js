@@ -78,7 +78,7 @@ document.querySelector("#customerForm").addEventListener("submit", async e => {
     }));
 
     // Redirect to customer dashboard (adjust path as needed)
-    window.location.href = "../pages/c-dashboard.html";
+    window.location.href = "../c-dashboard.html";
 
   } catch (err) {
     console.error("Customer Login Error:", err);
@@ -119,7 +119,7 @@ document.querySelector("#mechanicForm").addEventListener("submit", async e => {
       role: "mechanic"
     }));
 
-    window.location.href = "../pages/m-dashboard.html";
+    window.location.href = "../m-dashboard.html";
 
   } catch (err) {
     console.error("Mechanic Login Error:", err);
@@ -159,7 +159,7 @@ document.querySelector("#mechanicForm").addEventListener("submit", async e => {
 //       localStorage.setItem("mc_user", JSON.stringify({  id: mechanic.mechanicId,firstName: mechanic.firstName, name: email,role: "mechanic" }));
 
 //       // Redirect to mechanic dashboard
-//       window.location.href = "../pages/m-dashboard.html";
+//       window.location.href = "../m-dashboard.html";
 
 //     } else {
 //       alert("Invalid Email or Password");

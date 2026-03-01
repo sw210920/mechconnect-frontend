@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const user = JSON.parse(localStorage.getItem("mc_user"));
 
   if (!user || user.role !== "customer") {
-    window.location.href = "../pages/signIn.html";
+    window.location.href = "../signIn.html";
     return;
   }
 

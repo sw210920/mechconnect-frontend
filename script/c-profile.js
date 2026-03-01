@@ -9,7 +9,7 @@ console.log("%c[c-profile] loaded", "color:#3b82f6; font-weight:bold;");
 const sessionUser = JSON.parse(localStorage.getItem("mc_user"));
 
 if (!sessionUser || !sessionUser.customerId) {
-    window.location.href = "../pages/signIn.html";
+    window.location.href = "../signIn.html";
 }
 
 // Store ID safely
@@ -54,7 +54,7 @@ function loadProfile() {
             console.error("[c-profile] load error:", err);
             alert("Session expired. Please login again.");
             localStorage.removeItem("mc_user");
-            window.location.href = "../pages/signIn.html";
+            window.location.href = "../signIn.html";
         });
 }
 
